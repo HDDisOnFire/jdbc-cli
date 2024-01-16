@@ -1,6 +1,6 @@
-package com.github.cli.mysql;
+package com.github.cli.action.mysql;
 
-import com.github.cli.action.CliClient;
+import com.github.cli.action.CliClientAction;
 import com.github.cli.constant.CliConstant;
 import com.github.cli.reader.CommandReader;
 import com.github.cli.reader.CommandReaderFactory;
@@ -21,7 +21,7 @@ import java.util.Locale;
 
 @Data
 @Slf4j
-public class MySQLCli implements CliClient {
+public class MySQLCliAction implements CliClientAction {
 
     private String jdbcUrl;
 
@@ -36,7 +36,7 @@ public class MySQLCli implements CliClient {
     private CommandReader reader;
 
 
-    public MySQLCli() {
+    public MySQLCliAction() {
         this.reader = CommandReaderFactory.getReader();
     }
 

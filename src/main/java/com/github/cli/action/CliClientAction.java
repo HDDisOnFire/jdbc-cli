@@ -3,7 +3,7 @@ package com.github.cli.action;
 /**
  * 行为定义
  */
-public interface CliClient {
+public interface CliClientAction {
     /***
      * 启动客户端
      */

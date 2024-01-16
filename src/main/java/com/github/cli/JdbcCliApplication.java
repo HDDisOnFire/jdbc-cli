@@ -1,9 +1,9 @@
 package com.github.cli;
 
-import com.github.cli.action.CliClient;
+import com.github.cli.action.CliClientAction;
 import com.github.cli.exception.ExitCliException;
 import com.github.cli.exception.JdbcCliException;
-import com.github.cli.factory.JdbcCliFactory;
+import com.github.cli.action.factory.JdbcCliFactory;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -15,7 +15,7 @@ public class JdbcCliApplication {
     public static void main(String[] args) {
         try {
             log.info("Hello,Jdbc Cli Application!");
-            CliClient cliClient = JdbcCliFactory.create();
+            CliClientAction cliClient = JdbcCliFactory.create();
             cliClient.start();
         } catch (ExitCliException e) {
             log.info(e.getMessage());
