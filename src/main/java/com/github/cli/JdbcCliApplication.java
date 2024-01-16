@@ -1,5 +1,9 @@
 package com.github.cli;
 
+import com.github.cli.action.CliClient;
+import com.github.cli.exception.ExitCliException;
+import com.github.cli.exception.JdbcCliException;
+import com.github.cli.factory.JdbcCliFactory;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -9,6 +13,18 @@ import lombok.extern.slf4j.Slf4j;
 public class JdbcCliApplication {
 
     public static void main(String[] args) {
-        log.info("Hello,Jdbc Cli Application!");
+        try {
+            log.info("Hello,Jdbc Cli Application!");
+            CliClient cliClient = JdbcCliFactory.create();
+            cliClient.start();
+        } catch (ExitCliException e) {
+            log.info(e.getMessage());
+        } catch (JdbcCliException e) {
+            log.error(e.getMessage(), e);
+            log.error("构建应用失败，即将退出，再见!");
+        } catch (Throwable e) {
+            log.error(e.getMessage(), e);
+            log.error("构建应用失败，即将退出，再见!");
+        }
     }
 }
