@@ -63,21 +63,52 @@ public class MySQLCliAction implements CliClientAction {
         return this.reader.read();
     }
 
-    /**
-     * 执行sql
-     *
-     * @param sql
-     */
     private void executeSql(String sql) {
         if (StringUtils.isEmpty(sql)) {
             return;
         }
         sql = sql.trim();
-        if (!sql.toLowerCase(Locale.ENGLISH).startsWith("select")) {
-            log.warn("目前只能执行查询语句!");
+        String lowSql = sql.toLowerCase(Locale.ENGLISH);
+        if (lowSql.startsWith("select")) {
+            this.executeQuerySql(sql);
             return;
         }
-        log.info("开始执行sql:{}", sql);
+        if (lowSql.startsWith("delete")) {
+            this.executeDeleteSql(sql);
+            return;
+        }
+        log.info("目前仅支持删除和查询sql!");
+    }
+
+    private void executeDeleteSql(String sql) {
+        log.info("请确认是否执行sql: {}", sql);
+        log.info("yes or no");
+        String confirm = this.reader.read();
+        if (!StringUtils.equalsIgnoreCase("yes", confirm)) {
+            return;
+        }
+        log.info("开始更新执行sql:{}", sql);
+        Connection connection = null;
+        PreparedStatement statement = null;
+        try {
+            connection = this.getConnection();
+            statement = connection.prepareStatement(sql);
+            int i = statement.executeUpdate();
+            log.info("一共删除了{}调试数据", i);
+        } catch (Exception e) {
+            log.error(e.getMessage(), e);
+        } finally {
+            CloseUtil.close(statement, connection);
+        }
+    }
+
+    /**
+     * 执行sql
+     *
+     * @param sql
+     */
+    private void executeQuerySql(String sql) {
+        log.info("开始查询执行sql:{}", sql);
         Connection connection = null;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
