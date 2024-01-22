@@ -1,4 +1,4 @@
-package com.github.cli.reader;
+package com.glslx.jdbc.cli.reader;
 
 public class CommandReaderFactory {
 

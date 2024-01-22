@@ -1,9 +1,9 @@
-package com.github.cli;
+package com.glslx.jdbc.cli;
 
-import com.github.cli.action.CliClientAction;
-import com.github.cli.exception.ExitCliException;
-import com.github.cli.exception.JdbcCliException;
-import com.github.cli.action.factory.JdbcCliFactory;
+import com.glslx.jdbc.cli.action.CliClientAction;
+import com.glslx.jdbc.cli.exception.ExitCliException;
+import com.glslx.jdbc.cli.exception.JdbcCliException;
+import com.glslx.jdbc.cli.action.factory.JdbcCliFactory;
 import lombok.extern.slf4j.Slf4j;
 
 /**

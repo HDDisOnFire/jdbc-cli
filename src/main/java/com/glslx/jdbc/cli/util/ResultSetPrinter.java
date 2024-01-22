@@ -1,4 +1,4 @@
-package com.github.cli.util;
+package com.glslx.jdbc.cli.util;
 
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;

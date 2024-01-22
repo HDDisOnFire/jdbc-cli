@@ -1,7 +1,7 @@
-package com.github.cli.action.factory;
+package com.glslx.jdbc.cli.action.factory;
 
-import com.github.cli.action.CliClientAction;
-import com.github.cli.action.mysql.MySQLCliAction;
+import com.glslx.jdbc.cli.action.CliClientAction;
+import com.glslx.jdbc.cli.action.mysql.MySQLCliAction;
 
 /**
  * 客户端工厂

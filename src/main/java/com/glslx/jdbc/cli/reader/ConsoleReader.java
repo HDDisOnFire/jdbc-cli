@@ -1,7 +1,7 @@
-package com.github.cli.reader;
+package com.glslx.jdbc.cli.reader;
 
-import com.github.cli.util.CliExitUtil;
-import com.github.cli.util.CloseUtil;
+import com.glslx.jdbc.cli.util.CliExitUtil;
+import com.glslx.jdbc.cli.util.CloseUtil;
 
 import java.util.Scanner;
 

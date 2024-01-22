@@ -1,4 +1,4 @@
-package com.github.cli.exception;
+package com.glslx.jdbc.cli.exception;
 
 public class JdbcCliException extends RuntimeException {
     public JdbcCliException() {

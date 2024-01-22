@@ -1,11 +1,11 @@
-package com.github.cli.action.mysql;
+package com.glslx.jdbc.cli.action.mysql;
 
-import com.github.cli.action.CliClientAction;
-import com.github.cli.constant.CliConstant;
-import com.github.cli.reader.CommandReader;
-import com.github.cli.reader.CommandReaderFactory;
-import com.github.cli.util.CloseUtil;
-import com.github.cli.util.ResultSetPrinter;
+import com.glslx.jdbc.cli.action.CliClientAction;
+import com.glslx.jdbc.cli.constant.CliConstant;
+import com.glslx.jdbc.cli.reader.CommandReader;
+import com.glslx.jdbc.cli.reader.CommandReaderFactory;
+import com.glslx.jdbc.cli.util.CloseUtil;
+import com.glslx.jdbc.cli.util.ResultSetPrinter;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import lombok.Data;

@@ -1,7 +1,7 @@
-package com.github.cli.util;
+package com.glslx.jdbc.cli.util;
 
-import com.github.cli.constant.CliConstant;
-import com.github.cli.exception.ExitCliException;
+import com.glslx.jdbc.cli.constant.CliConstant;
+import com.glslx.jdbc.cli.exception.ExitCliException;
 import org.apache.commons.lang3.StringUtils;
 
 public class CliExitUtil {

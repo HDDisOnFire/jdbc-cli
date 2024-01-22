@@ -1,4 +1,4 @@
-package com.github.cli.action;
+package com.glslx.jdbc.cli.action;
 
 /**
  * 行为定义

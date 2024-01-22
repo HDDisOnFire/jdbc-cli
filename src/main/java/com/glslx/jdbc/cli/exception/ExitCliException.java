@@ -1,4 +1,4 @@
-package com.github.cli.exception;
+package com.glslx.jdbc.cli.exception;
 
 /**
  * 主动推出的异常
